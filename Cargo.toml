@@ -1,0 +1,18 @@
+[workspace]
+members = ["imewlconverter-core", "imewlconverter-cli"]
+resolver = "2"
+
+[workspace.package]
+version = "3.0.0"
+authors = ["studyzy <studyzy@163.com>"]
+license = "GPL-3.0"
+edition = "2021"
+rust-version = "1.70"
+
+[workspace.dependencies]
+# Shared dependencies
+thiserror = "1.0"
+anyhow = "1.0"
+encoding_rs = "0.8"
+regex = "1.10"
+serde = { version = "1.0", features = ["derive"] }

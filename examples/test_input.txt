@@ -1,0 +1,8 @@
+# Example input file for QQ Pinyin format
+# Format: pinyin word rank
+
+ni'hao 你好 1000
+shi'jie 世界 800
+zhong'guo 中国 1500
+cheng'xu'yuan 程序员 500
+ji'suan'ji 计算机 600

@@ -1,0 +1,19 @@
+[package]
+name = "imewlconverter-cli"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Command-line interface for IME word list converter"
+
+[[bin]]
+name = "imewlconverter"
+path = "src/main.rs"
+
+[dependencies]
+imewlconverter-core = { path = "../imewlconverter-core" }
+anyhow.workspace = true
+clap = { version = "4.5", features = ["derive"] }
+
+[dev-dependencies]

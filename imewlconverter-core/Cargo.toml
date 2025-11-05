@@ -1,0 +1,27 @@
+[package]
+name = "imewlconverter-core"
+version.workspace = true
+authors.workspace = true
+license.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+description = "Core library for IME word list converter"
+
+[dependencies]
+thiserror.workspace = true
+anyhow.workspace = true
+encoding_rs.workspace = true
+regex.workspace = true
+serde.workspace = true
+
+# For binary parsing
+byteorder = "1.5"
+nom = "7.1"
+
+# For simplified/traditional Chinese conversion
+opencc-rust = "1.1"
+
+# For parallel processing
+rayon = "1.8"
+
+[dev-dependencies]
