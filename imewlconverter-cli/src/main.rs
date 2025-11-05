@@ -9,11 +9,40 @@ use std::path::PathBuf;
 
 #[derive(Debug, Clone, Copy, ValueEnum)]
 enum InputFormat {
+    /// Baidu Pinyin format
+    BaiduPinyin,
+    /// Chinese Pyim format
+    ChinesePyim,
+    /// FIT input format
+    FitInput,
+    /// Google Pinyin format
+    GooglePinyin,
+    /// Libpinyin format
+    Libpinyin,
+    /// Microsoft Pinyin format
+    MsPinyin,
+    /// Pinyin Jiajia format
+    PinyinJiajia,
     /// QQ Pinyin text format
     QqPinyin,
+    /// QQ Wubi format
+    QqWubi,
     /// Rime format
     Rime,
-    // TODO: Add more formats as they are implemented
+    /// Sina Pinyin format
+    SinaPinyin,
+    /// Sogou Pinyin text format
+    SogouPinyin,
+    /// Sogou Scel binary format
+    SogouScel,
+    /// Wubi 86 format
+    Wubi86,
+    /// Wubi 98 format
+    Wubi98,
+    /// Wubi New Age format
+    WubiNewAge,
+    /// Ziguang Pinyin format
+    ZiguangPinyin,
 }
 
 #[derive(Debug, Clone, Copy, ValueEnum)]
@@ -91,8 +120,23 @@ fn main() -> Result<()> {
         }
 
         let importer: Box<dyn import::WordLibraryImport> = match args.input_format {
-            InputFormat::QqPinyin => Box::new(import::qq_pinyin::QQPinyinImport::new()),
-            InputFormat::Rime => Box::new(import::rime::RimeImport::new()),
+            InputFormat::BaiduPinyin => Box::new(import::BaiduPinyinImport),
+            InputFormat::ChinesePyim => Box::new(import::ChinesePyimImport::new()),
+            InputFormat::FitInput => Box::new(import::FitInputImport::new()),
+            InputFormat::GooglePinyin => Box::new(import::GooglePinyinImport),
+            InputFormat::Libpinyin => Box::new(import::LibpinyinImport::new()),
+            InputFormat::MsPinyin => Box::new(import::MsPinyinImport::new()),
+            InputFormat::PinyinJiajia => Box::new(import::PinyinJiajiaImport::new()),
+            InputFormat::QqPinyin => Box::new(import::QQPinyinImport::new()),
+            InputFormat::QqWubi => Box::new(import::QQWubiImport::new()),
+            InputFormat::Rime => Box::new(import::RimeImport::new()),
+            InputFormat::SinaPinyin => Box::new(import::SinaPinyinImport::new()),
+            InputFormat::SogouPinyin => Box::new(import::SogouPinyinImport),
+            InputFormat::SogouScel => Box::new(import::SogouScelImport),
+            InputFormat::Wubi86 => Box::new(import::Wubi86Import),
+            InputFormat::Wubi98 => Box::new(import::Wubi98Import),
+            InputFormat::WubiNewAge => Box::new(import::WubiNewAgeImport),
+            InputFormat::ZiguangPinyin => Box::new(import::ZiguangPinyinImport::new()),
         };
 
         let input_path = input_file
