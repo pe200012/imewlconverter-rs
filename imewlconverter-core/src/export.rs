@@ -33,6 +33,5 @@ mod tests {
     #[test]
     fn test_export_trait_exists() {
         // Just test that the trait compiles
-        assert!(true);
     }
 }

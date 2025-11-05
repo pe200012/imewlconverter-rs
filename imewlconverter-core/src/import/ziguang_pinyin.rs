@@ -32,7 +32,7 @@ impl WordLibraryTextImport for ZiguangPinyinImport {
         let (code_str, word, rank) = if line.contains('=') {
             // Format: code=word rank
             let parts: Vec<&str> = line.split_whitespace().collect();
-            if parts.len() < 1 {
+            if parts.is_empty() {
                 return Ok(None);
             }
 

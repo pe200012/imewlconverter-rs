@@ -72,6 +72,5 @@ mod tests {
     fn test_pinyin_helper_creation() {
         let helper = PinyinHelper::new();
         // This is a placeholder test since we haven't loaded the dictionary yet
-        assert!(true);
     }
 }

@@ -23,6 +23,7 @@ pub trait ChineseConverter {
 }
 
 /// OpenCC-based converter (for cross-platform use)
+#[derive(Default)]
 pub struct OpenCCConverter {
     // Will use opencc-rust library
 }
@@ -30,12 +31,6 @@ pub struct OpenCCConverter {
 impl OpenCCConverter {
     pub fn new() -> Result<Self> {
         Ok(OpenCCConverter {})
-    }
-}
-
-impl Default for OpenCCConverter {
-    fn default() -> Self {
-        OpenCCConverter {}
     }
 }
 

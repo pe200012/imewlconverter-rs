@@ -35,7 +35,5 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_helper_module_exists() {
-        assert!(true);
-    }
+    fn test_helper_module_exists() {}
 }

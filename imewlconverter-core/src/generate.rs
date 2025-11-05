@@ -35,6 +35,5 @@ mod tests {
     #[test]
     fn test_generator_trait_exists() {
         // Just test that the trait compiles
-        assert!(true);
     }
 }

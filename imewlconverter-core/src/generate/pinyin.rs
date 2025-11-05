@@ -30,7 +30,7 @@ impl PinyinGenerator {
         self.resources
             .get_char_codes(c, &CodeType::Pinyin)
             .and_then(|pinyins| pinyins.first().cloned())
-            .ok_or_else(|| Error::CharacterNotFound(c))
+            .ok_or(Error::CharacterNotFound(c))
     }
 
     /// Check if a character has multiple pronunciations
@@ -108,7 +108,7 @@ impl CodeGenerator for PinyinGenerator {
 
         self.resources
             .get_char_codes(c, &CodeType::Pinyin)
-            .ok_or_else(|| Error::CharacterNotFound(c))
+            .ok_or(Error::CharacterNotFound(c))
     }
 
     fn is_multi_code_per_char(&self) -> bool {

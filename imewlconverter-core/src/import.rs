@@ -105,6 +105,5 @@ mod tests {
     fn test_read_file_utf8() {
         // This would require actual test files
         // Just test that the function exists and compiles
-        assert!(true);
     }
 }
